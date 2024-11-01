@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Postulados | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ver_postulantes.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Encabezado de Visualización de Postulantes -->
+    <header class="header-ver-postulantes">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2>Usuarios Postulados | Nombre del proyecto</h2>
+        </div>
+    </header>
+
+    <!-- Sección de Postulantes -->
+    <section class="ver-postulantes-section">
+        <h2>Postulantes a Tu Proyecto</h2>
+
+        <div class="postulantes-list">
+            <!-- Ejemplo de Postulante 1 -->
+            <div class="postulante-card">
+                <h3>Juan Pérez</h3>
+                <p><strong>Correo Electrónico:</strong> juan.perez@example.com</p>
+                <p><strong>Teléfono:</strong> +1234567890</p>
+                <p><strong>Carta de Presentación:</strong></p>
+                <p>Soy un desarrollador con experiencia en aplicaciones móviles y en desarrollo frontend.</p>
+                <a href="/profile?email=usuario.prueba@unidev.com" class="view-cv">Ver Currículum (PDF)</a>
+            </div>
+
+            <!-- Ejemplo de Postulante 2 -->
+            <div class="postulante-card">
+                <h3>Ana Gómez</h3>
+                <p><strong>Correo Electrónico:</strong> ana.gomez@example.com</p>
+                <p><strong>Teléfono:</strong> +0987654321</p>
+                <p><strong>Carta de Presentación:</strong></p>
+                <p>Especializada en ciencia de datos y análisis de grandes volúmenes de información.</p>
+                <a href="/profile?email=usuario.prueba@unidev.com" class="view-cv">Ver Currículum (PDF)</a>
+            </div>
+
+            <!-- Ejemplo de Postulante 3 -->
+            <div class="postulante-card">
+                <h3>Carlos Fernández</h3>
+                <p><strong>Correo Electrónico:</strong> carlos.fernandez@example.com</p>
+                <p><strong>Teléfono:</strong> +1231231234</p>
+                <p><strong>Carta de Presentación:</strong></p>
+                <p>Desarrollador web con experiencia en frontend y backend, especializado en proyectos escalables.</p>
+                <a href="/profile?email=usuario.prueba@unidev.com" class="view-cv">Ver Currículum (PDF)</a>
+            </div>
+
+            <!-- Puedes añadir más postulantes de la misma forma -->
+        </div>
+    </section>
+</body>
+</html>

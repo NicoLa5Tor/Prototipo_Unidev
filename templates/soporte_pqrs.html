@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte y PQRS | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/soporte_pqrs.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header-pqrs">
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2>Soporte y PQRS</h2>
+        </div>
+        <p>Envía tus consultas, quejas, peticiones o sugerencias y nuestro equipo se encargará de resolverlas.</p>
+    </header>
+
+    <!-- Formulario de PQRS -->
+    <section class="pqrs-form-section">
+        <form class="pqrs-form" action="success.html" method="post" onsubmit="return handleFormSubmit(event)">
+            <h2>Enviar PQRS</h2>
+            <div class="form-group">
+                <label for="nombre"><span class="material-icons">person</span> Nombre</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+            </div>
+            <div class="form-group">
+                <label for="email"><span class="material-icons">email</span> Correo Electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+            </div>
+            <div class="form-group">
+                <label for="tipo"><span class="material-icons">report_problem</span> Tipo de Solicitud</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="consulta">Consulta</option>
+                    <option value="queja">Queja</option>
+                    <option value="peticion">Petición</option>
+                    <option value="sugerencia">Sugerencia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensaje"><span class="material-icons">message</span> Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn"><span class="material-icons">send</span> Enviar Solicitud</button>
+        </form>
+    </section>
+
+    <!-- Script para manejar el envío del formulario -->
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Evita el envío por defecto
+            alert("PQR enviado con éxito");
+            window.location.href = "busqueda_postulacion"; // Redirige a la vista de confirmación
+            return True;
+        }
+    </script>
+</body>
+</html>

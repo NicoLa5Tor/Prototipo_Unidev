@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auditoria.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header-auditoria">
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2>Auditoría</h2>
+        </div>
+    </header>
+
+    <!-- Sección de Filtros de Auditoría -->
+    <section class="audit-filters">
+        <h2>Filtrar Actividades</h2>
+        <form class="filters-form">
+            <div class="form-group">
+                <label for="activity-type"><span class="material-icons">filter_list</span> Tipo de Actividad</label>
+                <select id="activity-type" name="activity-type">
+                    <option value="todos">Todos</option>
+                    <option value="perfil">Cambios en Perfiles</option>
+                    <option value="proyecto">Modificaciones en Proyectos</option>
+                    <option value="transaccion">Transacciones</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date-range"><span class="material-icons">date_range</span> Rango de Fechas</label>
+                <input type="date" id="start-date" name="start-date">
+                <input type="date" id="end-date" name="end-date">
+            </div>
+            <button type="button" class="filter-btn"><span class="material-icons">search</span> Aplicar Filtro</button>
+        </form>
+    </section>
+
+    <!-- Sección de Historial de Auditoría -->
+    <section class="audit-history">
+        <h2>Historial de Auditoría</h2>
+        <div class="audit-list">
+            <!-- Ejemplo de actividad -->
+            <div class="audit-item">
+                <span class="material-icons activity-icon">person</span>
+                <div class="audit-details">
+                    <h3>Cambio en el Perfil</h3>
+                    <p><strong>Usuario:</strong> Juan Pérez</p>
+                    <p><strong>Fecha:</strong> 01/11/2024 - 14:35</p>
+                    <p><strong>Detalle:</strong> Actualización de información de contacto en el perfil.</p>
+                </div>
+            </div>
+
+            <div class="audit-item">
+                <span class="material-icons activity-icon">edit</span>
+                <div class="audit-details">
+                    <h3>Modificación en Proyecto</h3>
+                    <p><strong>Proyecto:</strong> Desarrollo Web E-commerce</p>
+                    <p><strong>Fecha:</strong> 01/11/2024 - 12:15</p>
+                    <p><strong>Detalle:</strong> Cambios en los requisitos del proyecto.</p>
+                </div>
+            </div>
+
+            <div class="audit-item">
+                <span class="material-icons activity-icon">monetization_on</span>
+                <div class="audit-details">
+                    <h3>Transacción Realizada</h3>
+                    <p><strong>Usuario:</strong> Ana Rodríguez</p>
+                    <p><strong>Fecha:</strong> 01/11/2024 - 10:50</p>
+                    <p><strong>Detalle:</strong> Pago realizado para el proyecto de diseño gráfico.</p>
+                </div>
+            </div>
+
+            <!-- Agrega más elementos de ejemplo según sea necesario -->
+        </div>
+    </section>
+</body>
+</html>

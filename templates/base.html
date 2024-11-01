@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}UniDev{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Fondo del sitio -->
+    <div class="background-overlay"></div>
+
+    <!-- Encabezado con Logo y Navegación -->
+    <header class="header">
+        <img src="{{ url_for('static', filename='images/UniDev_Logo_Text_Only_Transparent.png') }}" alt="UniDev Logo" class="logo">
+    </header>
+    
+    <!-- Menú de Navegación Centralizado -->
+    <nav class="nav-menu">
+        <a href="/register" class="nav-button">Registro y Perfil</a>
+        <a href="/busqueda_postulacion" class="nav-button">Búsqueda y Postulación</a>
+        <a href="/gestion_proyectos" class="nav-button">Gestión de Proyectos</a>
+        <a href="/evaluacion_ranking" class="nav-button">Evaluación y Ranking</a>
+        <a href="/gestion_pagos" class="nav-button">Gestión de Pagos</a>
+        <a href="/soporte_pqrs" class="nav-button">Soporte y PQRS</a>
+        <a href="/reportes_estadisticas" class="nav-button">Reportes y Estadísticas</a>
+        <a href="/auditoria" class="nav-button">Auditoría</a>
+    </nav>
+
+    <a href="/logout" class="logout-btn">
+        <span class="material-icons">logout</span> Cerrar sesión
+    </a>
+
+    <!-- Contenido principal -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

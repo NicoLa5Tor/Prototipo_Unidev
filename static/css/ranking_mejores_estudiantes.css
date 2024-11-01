@@ -1,0 +1,220 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header-ranking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #004a7c;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.header-ranking h1 {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Sección de Ranking */
+.ranking-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.ranking-section h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Lista de Estudiantes */
+.student-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjetas de Estudiantes */
+.student-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.student-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.student-card h3 {
+    color: #333;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.student-card p {
+    color: #666;
+    margin: 8px 0 16px;
+    font-size: 1rem;
+}
+
+/* Tabla de Dificultad de Proyectos */
+.project-difficulty {
+    margin-top: 15px;
+}
+
+.project-difficulty h4 {
+    font-size: 1.1rem;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.difficulty-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.difficulty-bar span {
+    width: 60px;
+}
+
+.difficulty-bar .bar {
+    height: 8px;
+    border-radius: 4px;
+    margin: 0 10px;
+    transition: width 0.3s ease;
+}
+
+.difficulty-bar .easy {
+    background-color: #81c784;
+}
+
+.difficulty-bar .medium {
+    background-color: #4CAF50;
+}
+
+.difficulty-bar .hard {
+    background-color: #388e3c;
+}
+
+/* Dashboard de Estadísticas Generales */
+.dashboard-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-section h2 {
+    color: #4CAF50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.dashboard-card h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #4CAF50;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.difficulty-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.difficulty-table th,
+.difficulty-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.difficulty-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+/* Estilos para el Botón "Ver Perfil" */
+.btn-view-profile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-view-profile:hover {
+    background-color: #388e3c; /* Cambio de color al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    transform: translateY(-3px); /* Efecto de elevación */
+}
+
+.btn-view-profile:active {
+    background-color: #2e7d32;
+    transform: translateY(1px); /* Efecto de presión */
+}
+a{
+    text-decoration: none;
+}

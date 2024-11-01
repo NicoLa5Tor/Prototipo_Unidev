@@ -1,0 +1,177 @@
+/* Estilos Generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-auditoria {
+    text-align: center;
+    background-color: #004a7c;
+    color: white;
+    width: 100%;
+    padding: 20px;
+}
+
+.header-auditoria .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-auditoria .logo {
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.header-auditoria h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.header-auditoria p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Filtros de Auditoría */
+.audit-filters {
+    width: 100%;
+    max-width: 700px;
+    background-color: white;
+    padding: 2rem;
+    margin: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.audit-filters h2 {
+    color: #004a7c;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filters-form .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.filters-form label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.filters-form label .material-icons {
+    font-size: 1.2rem;
+    color: #004a7c;
+    margin-right: 8px;
+}
+
+.filters-form select, .filters-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filter-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #007bff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Historial de Auditoría */
+.audit-history {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem 1rem;
+}
+
+.audit-history h2 {
+    color: #004a7c;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.audit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.audit-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.audit-item:hover {
+    transform: translateY(-5px);
+}
+
+.activity-icon {
+    font-size: 2.5rem;
+    color: #004a7c;
+    margin-right: 1rem;
+}
+
+.audit-details h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.audit-details p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .header-auditoria h1 {
+        font-size: 1.8rem;
+    }
+
+    .audit-filters, .audit-history {
+        padding: 1rem;
+    }
+
+    .filter-btn {
+        font-size: 0.9rem;
+    }
+}

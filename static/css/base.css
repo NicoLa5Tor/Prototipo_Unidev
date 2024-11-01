@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    z-index: -1;
+}
+
+/* Header */
+.header {
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    transform: scale(1.1);
+    transform-origin: center;
+}
+
+/* Menú de Navegación Estilizado */
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.nav-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 180px;
+    text-align: center;
+    margin: 5px;
+}
+
+.nav-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Botón de Cerrar Sesión */
+.logout-btn {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .nav-button {
+        font-size: 14px;
+        padding: 10px 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pagos | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gestion_pagos.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="header-pagos">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2>Gestión de Pagos</h2>
+        </div>
+    </header>
+
+    <!-- Sección de Opciones de Pago -->
+    <section class="payment-options">
+        <div class="payment-card">
+            <span class="material-icons">credit_card</span>
+            <h2>Enlace a Pasarela de Pago</h2>
+            <p>Conéctese con nuestros proveedores de pago externos de manera segura.</p>
+            <button onclick="openModal('paymentModal')" class="btn-payment">Ir a Pasarela</button>
+        </div>
+        <div class="payment-card">
+            <span class="material-icons">library_books</span>
+            <h2>Guía de Pago Seguro</h2>
+            <p>Consulte nuestra guía para realizar pagos de forma segura y cumplir con las normativas.</p>
+            <button onclick="openModal('guideModal')" class="btn-payment">Leer Guía</button>
+        </div>
+        <div class="payment-card">
+            <span class="material-icons">support_agent</span>
+            <h2>Soporte para Transacciones</h2>
+            <p>Contáctenos si necesita ayuda con el proceso de pago o si tiene alguna consulta.</p>
+            <a href="https://wa.me/3103391854" target="_blank" class="btn-payment">Solicitar Soporte</a>
+        </div>
+    </section>
+
+    <!-- Modal de Selección de Pasarela de Pago -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('paymentModal')">&times;</span>
+            <h2>Seleccione una Pasarela de Pago</h2>
+            <div class="modal-buttons">
+                <a href="https://www.paypal.com" target="_blank" class="modal-button">PayPal</a>
+                <a href="https://www.mercadopago.com" target="_blank" class="modal-button">Mercado Pago</a>
+                <a href="https://www.payu.com" target="_blank" class="modal-button">PayU</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Guía de Pago -->
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('guideModal')">&times;</span>
+            <h2>Guía de Pago Seguro</h2>
+            <p>A continuación se presentan algunos consejos para realizar pagos de manera segura:</p>
+            <ul>
+                <li>Verifique que esté en una página oficial del proveedor de pago.</li>
+                <li>Utilice conexiones seguras (https) al ingresar sus datos de pago.</li>
+                <li>Revise los montos y conceptos antes de confirmar el pago.</li>
+                <li>Para cualquier duda, consulte nuestra sección de soporte.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Cerrar el modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName("modal");
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre de la empresa | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/busqueda.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado de Búsqueda -->
+    <header class="header-busqueda">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2>Proyectos | Vista empresa</h2>
+        </div>
+        <!-- Botón de Menú de Hamburguesa para Filtros -->
+        <div class="hamburger-menu" onclick="toggleFilters()">
+            <span class="material-icons">menu</span>
+        </div>
+    </header>
+
+    <!-- Filtros de Búsqueda (Menú Desplegable) -->
+    <section id="filter-section" class="filter-section">
+        <h2>Filtrar Proyectos</h2>
+        <form class="filter-form">
+            <div class="form-group">
+                <label for="category">Categoría:</label>
+                <select id="category" name="category">
+                    <option value="">Selecciona una categoría</option>
+                    <option value="web_dev">Desarrollo Web</option>
+                    <option value="data_science">Ciencia de Datos</option>
+                    <option value="mobile_dev">Desarrollo Móvil</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty">Nivel de Dificultad:</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="">Selecciona el nivel</option>
+                    <option value="beginner">Principiante</option>
+                    <option value="intermediate">Intermedio</option>
+                    <option value="advanced">Avanzado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">Plazo:</label>
+                <input type="date" id="deadline" name="deadline">
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Remuneración (USD):</label>
+                <input type="number" id="budget" name="budget" placeholder="Ejemplo: 500">
+            </div>
+
+            <button type="submit" class="btn-primary">Buscar</button>
+        </form>
+    </section>
+
+    <!-- Resultados de Búsqueda -->
+    <section class="search-results">
+        <h2>Proyectos Encontrados</h2>
+
+        <!-- Ejemplo de Proyecto 1 -->
+        <div class="project-card">
+            <h3>Proyecto de Ciencia de Datos - Predicción de Ventas</h3>
+            <p><strong>Empresa:</strong> Data Solutions Ltd.</p>
+            <p><strong>Categoría:</strong> Ciencia de Datos</p>
+            <p><strong>Nivel de Dificultad:</strong> Intermedio</p>
+            <p><strong>Descripción:</strong> Desarrollar un modelo de predicción de ventas utilizando algoritmos de Machine Learning para analizar tendencias históricas y hacer predicciones futuras.</p>
+            <p><strong>Plazo:</strong> 2023-12-15</p>
+            <p><strong>Remuneración Ofrecida:</strong> $700 USD</p>
+            <p><strong>Remuneración Sugerida por IA:</strong> $850 USD</p>
+            <p><strong>Tiempo Estimado:</strong> 4 semanas</p>
+            <a href="/postulacion" class="apply-button">Ver Proyecto y Postularse</a>
+            <a href="/editar" class="edit-project-button">Editar</a>
+            <a class="delete-project-button">Eliminar</a>
+            <div class="fixed-apply-button">
+                <a href="/ver_postulantes" class="btn-apply">Postulaciones</a>
+            </div>
+        </div>
+
+        <!-- Ejemplo de Proyecto 2 -->
+        <div class="project-card">
+            <h3>Desarrollo de Aplicación Móvil - Plataforma Educativa</h3>
+            <p><strong>Empresa:</strong> EduTech Innovations</p>
+            <p><strong>Categoría:</strong> Desarrollo Móvil</p>
+            <p><strong>Nivel de Dificultad:</strong> Avanzado</p>
+            <p><strong>Descripción:</strong> Crear una aplicación móvil para mejorar el acceso a contenido educativo mediante videollamadas, chat y recursos multimedia. Se necesita una interfaz intuitiva y eficiente.</p>
+            <p><strong>Plazo:</strong> 2024-01-20</p>
+            <p><strong>Remuneración Ofrecida:</strong> $1200 USD</p>
+            <p><strong>Remuneración Sugerida por IA:</strong> $1500 USD</p>
+            <p><strong>Tiempo Estimado:</strong> 6 semanas</p>
+            <a href="/postulacion" class="apply-button">Ver Proyecto y Postularse</a>
+            <a href="/editar" class="edit-project-button">Editar</a>
+            <a class="delete-project-button">Eliminar</a>
+            <div class="fixed-apply-button">
+                <a href="/ver_postulantes" class="btn-apply">Postulaciones</a>
+            </div>
+        </div>
+
+        <!-- Ejemplo de Proyecto 3 -->
+        <div class="project-card">
+            <h3>Desarrollo Web - Tienda en Línea</h3>
+            <p><strong>Empresa:</strong> eCommerce Pro</p>
+            <p><strong>Categoría:</strong> Desarrollo Web</p>
+            <p><strong>Nivel de Dificultad:</strong> Intermedio</p>
+            <p><strong>Descripción:</strong> Desarrollar una tienda en línea con carrito de compras, integración de pasarelas de pago y gestión de inventario.</p>
+            <p><strong>Plazo:</strong> 2023-11-30</p>
+            <p><strong>Remuneración Ofrecida:</strong> $900 USD</p>
+            <p><strong>Remuneración Sugerida por IA:</strong> $1100 USD</p>
+            <p><strong>Tiempo Estimado:</strong> 5 semanas</p>
+            <a href="/postulacion" class="apply-button">Ver Proyecto y Postularse</a>
+            <a href="/editar" class="edit-project-button">Editar</a>
+            <a class="delete-project-button">Eliminar</a>
+            <div class="fixed-apply-button">
+                <a href="/ver_postulantes" class="btn-apply">Postulaciones</a>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Botón de Postular Proyecto -->
+    
+    <div class="fixed-apply-button">
+        <a href="/postulacion" class="btn-apply">Postular Proyecto</a>
+    </div>
+
+    <script>
+        function toggleFilters() {
+            const filterSection = document.getElementById('filter-section');
+            filterSection.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

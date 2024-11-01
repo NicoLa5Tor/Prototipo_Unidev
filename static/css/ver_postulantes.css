@@ -1,0 +1,93 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header-ver-postulantes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #004a7c;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.header-ver-postulantes h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Sección de Visualización de Postulantes */
+.ver-postulantes-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ver-postulantes-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.postulantes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.postulante-card {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.postulante-card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.postulante-card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.view-cv {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4CAF50;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.view-cv:hover {
+    color: #388e3c;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .header-ver-postulantes h1 {
+        font-size: 1.5rem;
+    }
+}

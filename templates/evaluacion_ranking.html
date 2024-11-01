@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación y Ranking | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluacion_ranking.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado del Módulo de Evaluación -->
+    <header class="header-evaluacion">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2><span class="material-icons">rate_review</span> Evaluación de Proyecto y Ranking</h2>
+        </div>
+    </header>
+
+    <!-- Formulario de Evaluación -->
+    <section class="evaluacion-section">
+        <h2>Evaluar Desempeño del Estudiante</h2>
+        
+        <form class="evaluacion-form" onsubmit="calcularRanking(event)">
+            <div class="form-group">
+                <label for="studentName"><span class="material-icons">person</span> Nombre del Estudiante:</label>
+                <input type="text" id="studentName" name="studentName" required placeholder="Ejemplo: Juan Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="calidadTrabajo"><span class="material-icons">grade</span> Calidad del Trabajo:</label>
+                <select id="calidadTrabajo" name="calidadTrabajo" required>
+                    <option value="">Seleccione una calificación</option>
+                    <option value="5">Excelente</option>
+                    <option value="4">Muy Bueno</option>
+                    <option value="3">Bueno</option>
+                    <option value="2">Regular</option>
+                    <option value="1">Malo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="puntualidad"><span class="material-icons">schedule</span> Puntualidad:</label>
+                <select id="puntualidad" name="puntualidad" required>
+                    <option value="">Seleccione una calificación</option>
+                    <option value="5">Excelente</option>
+                    <option value="4">Muy Bueno</option>
+                    <option value="3">Bueno</option>
+                    <option value="2">Regular</option>
+                    <option value="1">Malo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comunicacion"><span class="material-icons">forum</span> Capacidad de Comunicación:</label>
+                <select id="comunicacion" name="comunicacion" required>
+                    <option value="">Seleccione una calificación</option>
+                    <option value="5">Excelente</option>
+                    <option value="4">Muy Bueno</option>
+                    <option value="3">Bueno</option>
+                    <option value="2">Regular</option>
+                    <option value="1">Malo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comentarios"><span class="material-icons">comment</span> Comentarios Adicionales:</label>
+                <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe algún comentario adicional..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit"><span class="material-icons">send</span> Enviar Evaluación</button>
+        </form>
+    </section>
+
+    <!-- Ranking del Estudiante -->
+    <section class="ranking-section">
+        <h2><span class="material-icons">star</span> Ranking del Estudiante</h2>
+        <div class="ranking-display" id="rankingDisplay">
+            <!-- Estrellas de ranking, que se llenarán dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Botón para Ver Ranking de Mejores Estudiantes -->
+    <section class="ver-ranking">
+        <a href="/ranking_mejores_estudiantes" class="btn-ranking">
+            <span class="material-icons">leaderboard</span> Ver Ranking de Mejores Estudiantes
+        </a>
+    </section>
+
+    <script>
+        function calcularRanking(event) {
+            event.preventDefault();
+
+            const calidad = parseInt(document.getElementById('calidadTrabajo').value);
+            const puntualidad = parseInt(document.getElementById('puntualidad').value);
+            const comunicacion = parseInt(document.getElementById('comunicacion').value);
+            const promedio = (calidad + puntualidad + comunicacion) / 3;
+
+            const rankingDisplay = document.getElementById("rankingDisplay");
+            rankingDisplay.innerHTML = "";
+            for (let i = 1; i <= 5; i++) {
+                if (i <= promedio) {
+                    rankingDisplay.innerHTML += '<span class="material-icons star">star</span>';
+                } else if (i - promedio < 1) {
+                    rankingDisplay.innerHTML += '<span class="material-icons star">star_half</span>';
+                } else {
+                    rankingDisplay.innerHTML += '<span class="material-icons star">star_border</span>';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

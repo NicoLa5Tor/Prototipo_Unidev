@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes y Estadísticas | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reportes_estadisticas.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Agregar jsPDF y Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header-reportes">
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2>Reportes y Estadísticas</h2>
+        </div>
+    </header>
+
+    <!-- Sección de Filtros y Descarga -->
+    <section class="report-filters">
+        <h2>Configurar Reporte</h2>
+        <form class="filters-form" onsubmit="return generateReport(event)">
+            <div class="form-group">
+                <label for="report-type"><span class="material-icons">description</span> Tipo de Reporte</label>
+                <select id="report-type" name="report-type">
+                    <option value="uso">Uso de la Plataforma</option>
+                    <option value="proyectos">Proyectos Completados</option>
+                    <option value="desempeno">Desempeño de Estudiantes</option>
+                    <option value="participacion">Participación de Empresas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date-range"><span class="material-icons">date_range</span> Rango de Fechas</label>
+                <input type="date" id="start-date" name="start-date">
+                <input type="date" id="end-date" name="end-date">
+            </div>
+            <button type="submit" class="generate-btn"><span class="material-icons">assessment</span> Generar Reporte</button>
+            <button type="button" class="download-btn" onclick="downloadPdfReport()"><span class="material-icons">download</span> Descargar Reporte</button>
+        </form>
+    </section>
+
+    <!-- Sección de Gráficos y Estadísticas Claves -->
+    <section class="statistics-section">
+        <h2>Estadísticas Clave</h2>
+        <div class="statistics-grid">
+            <div class="stat-card">
+                <span class="material-icons">trending_up</span>
+                <h3>Proyectos Completados</h3>
+                <p>120 Proyectos</p>
+            </div>
+            <div class="stat-card">
+                <span class="material-icons">group</span>
+                <h3>Participación de Empresas</h3>
+                <p>50 Empresas Activas</p>
+            </div>
+            <div class="stat-card">
+                <span class="material-icons">school</span>
+                <h3>Desempeño de Estudiantes</h3>
+                <p>85% de Evaluaciones Positivas</p>
+            </div>
+            <div class="stat-card">
+                <span class="material-icons">access_time</span>
+                <h3>Horas de Uso</h3>
+                <p>1500 Horas Totales</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gráfico oculto para el PDF -->
+    <canvas id="reportChart" width="400" height="200" style="display: none;"></canvas>
+
+    <script>
+        function generateReport(event) {
+            event.preventDefault();
+            alert("Reporte generado con éxito.");
+        }
+
+        function downloadPdfReport() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Logo UniDev y Título
+            doc.setFontSize(18);
+            doc.text("UniDev - Reporte de Estadísticas", 15, 20);
+            doc.setFontSize(12);
+            doc.text(`Fecha: ${new Date().toLocaleDateString()}`, 15, 30);
+
+            // Datos Ficticios
+            doc.text("Resumen de la Plataforma:", 15, 45);
+            doc.text("- Proyectos Completados: 120", 15, 55);
+            doc.text("- Empresas Activas: 50", 15, 65);
+            doc.text("- Evaluaciones Positivas de Estudiantes: 85%", 15, 75);
+            doc.text("- Horas de Uso Total: 1500", 15, 85);
+
+            // Crear el gráfico en canvas y exportarlo al PDF
+            const ctx = document.getElementById("reportChart").getContext("2d");
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Proyectos Completados', 'Empresas Activas', 'Evaluaciones Positivas', 'Horas de Uso'],
+                    datasets: [{
+                        label: 'Estadísticas',
+                        data: [120, 50, 85, 1500],
+                        backgroundColor: ['#004a7c', '#007bff', '#28a745', '#17a2b8']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            // Convertir gráfico a imagen y agregarlo al PDF
+            setTimeout(() => {
+                const chartDataUrl = document.getElementById("reportChart").toDataURL("image/png");
+                doc.addImage(chartDataUrl, 'PNG', 15, 100, 180, 90);
+                doc.save("Reporte_UniDev.pdf");
+            }, 500);
+        }
+    </script>
+</body>
+</html>

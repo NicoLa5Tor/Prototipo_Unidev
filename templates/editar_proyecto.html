@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Proyecto | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/postulacion.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado de Creación de Proyecto -->
+    <header class="header-crear-proyecto">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2>Editar nuevo proyecto               |               Nombre de la empresa</h2>
+        </div>
+    
+    </header>
+
+    <!-- Formulario de Creación de Proyecto -->
+    <section class="crear-proyecto-section">
+        <h2>Detalles del Proyecto | Nombre del proyecto</h2>
+        <form class="crear-proyecto-form" id="crearProyectoForm">
+            <div class="form-group">
+                <label for="projectName">Nombre del Proyecto:</label>
+                <input type="text" id="projectName" name="projectName" required value="Desarrollo de Plataforma de E-learning">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Categoría:</label>
+                <select id="category" name="category" required>
+                    <option value="web_dev" selected>Desarrollo Web</option>
+                    <option value="data_science">Ciencia de Datos</option>
+                    <option value="mobile_dev">Desarrollo Móvil</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty">Nivel de Dificultad:</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="intermediate" selected>Intermedio</option>
+                    <option value="beginner">Principiante</option>
+                    <option value="advanced">Avanzado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">Plazo:</label>
+                <input type="date" id="deadline" name="deadline" required value="2024-05-30">
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Remuneración (USD):</label>
+                <input type="number" id="budget" name="budget" required value="1500" placeholder="Ejemplo: 1000">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descripción del Proyecto:</label>
+                <textarea id="description" name="description" rows="4" required placeholder="Escribe aquí la descripción del proyecto...">Crear una plataforma de E-learning que permita a los estudiantes acceder a cursos en línea, materiales de estudio y tutorías.</textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Editar Proyecto</button>
+        </form>
+    </section>
+
+    <script>
+        // Guardar datos en localStorage y redirigir a búsqueda
+        document.getElementById('crearProyectoForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+
+            // Guardar datos en localStorage
+            const projectName = document.getElementById('projectName').value;
+            const category = document.getElementById('category').value;
+            const difficulty = document.getElementById('difficulty').value;
+            const deadline = document.getElementById('deadline').value;
+            const budget = document.getElementById('budget').value;
+            const description = document.getElementById('description').value;
+
+            const projectData = {
+                projectName,
+                category,
+                difficulty,
+                deadline,
+                budget,
+                description
+            };
+
+            localStorage.setItem('lastCreatedProject', JSON.stringify(projectData));
+
+            // Redirigir a la página de búsqueda
+            window.location.href = '/gestion_proyectos';
+        });
+
+        function toggleFilters() {
+            // Función para mostrar/ocultar filtros si es necesario
+        }
+    </script>
+</body>
+</html>

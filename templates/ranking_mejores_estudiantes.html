@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking de los Mejores Estudiantes | UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ranking_mejores_estudiantes.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado del Módulo de Ranking -->
+    <header class="header-ranking">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+            <h2><span class="material-icons">leaderboard</span> Ranking de los Mejores Estudiantes</h2>
+        </div>
+    </header>
+
+    <!-- Lista de Mejores Estudiantes -->
+    <section class="ranking-section">
+        <h2>Top Estudiantes</h2>
+        <div class="student-list">
+    
+
+            <div class="student-card">
+                <h3>1. Ana Gómez</h3>
+                <p><strong>Puntaje Promedio:</strong> 4.3</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star_half"></span>
+                    <span class="material-icons star_border"></span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 80%;"></div><span>16</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 50%;"></div><span>10</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 30%;"></div><span>6</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+
+            </div>
+
+            <!-- Más ejemplos de estudiantes con datos variados -->
+            <div class="student-card">
+                <h3>2. Carlos Fernández</h3>
+                <p><strong>Puntaje Promedio:</strong> 4.0</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star</span>
+                    <span class="material-icons star_border</span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 50%;"></div><span>10</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 60%;"></div><span>12</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 20%;"></div><span>4</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+            </div>
+            <div class="student-card">
+                <h3>3. Luisa Martínez</h3>
+                <p><strong>Puntaje Promedio:</strong> 3.9</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star_half</span>
+                    <span class="material-icons star_border</span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 70%;"></div><span>14</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 40%;"></div><span>8</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 30%;"></div><span>6</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+            </div>
+            
+            <div class="student-card">
+                <h3>4. Daniela Rojas</h3>
+                <p><strong>Puntaje Promedio:</strong> 4.2</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star"></span>
+                    <span class="material-icons star_border"></span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 60%;"></div><span>12</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 30%;"></div><span>6</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 40%;"></div><span>8</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+            </div>
+            
+            <div class="student-card">
+                <h3>5. Javier Mendoza</h3>
+                <p><strong>Puntaje Promedio:</strong> 3.8</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star_half</span>
+                    <span class="material-icons star_border"></span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 50%;"></div><span>10</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 60%;"></div><span>12</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 30%;"></div><span>6</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+            </div>
+            
+            <div class="student-card">
+                <h3>6. Karla Torres</h3>
+                <p><strong>Puntaje Promedio:</strong> 4.4</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star"></span>
+                    <span class="material-icons star_half"></span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 80%;"></div><span>16</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 50%;"></div><span>10</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 30%;"></div><span>6</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+            </div>
+            
+            <div class="student-card">
+                <h3>7. Roberto Rivera</h3>
+                <p><strong>Puntaje Promedio:</strong> 4.1</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star_half</span>
+                    <span class="material-icons star_border"></span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 55%;"></div><span>11</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 40%;"></div><span>8</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 30%;"></div><span>6</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+            </div>
+            
+            <div class="student-card">
+                <h3>8. Silvia Vega</h3>
+                <p><strong>Puntaje Promedio:</strong> 3.7</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star_border"></span>
+                    <span class="material-icons star_border"></span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 40%;"></div><span>8</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 60%;"></div><span>12</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 20%;"></div><span>4</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+            </div>
+            
+            <div class="student-card">
+                <h3>9. Pedro Jiménez</h3>
+                <p><strong>Puntaje Promedio:</strong> 3.6</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star_half</span>
+                    <span class="material-icons star_border"></span>
+                    <span class="material-icons star_border"></span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 70%;"></div><span>14</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 30%;"></div><span>6</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 10%;"></div><span>2</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+
+            </div>
+            
+            <div class="student-card">
+                <h3>10. María López</h3>
+                <p><strong>Puntaje Promedio:</strong> 4.6</p>
+                <div class="ranking-display">
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star">star</span>
+                    <span class="material-icons star"></span>
+                    <span class="material-icons star_half"></span>
+                </div>
+                <div class="project-difficulty">
+                    <h4>Proyectos por Dificultad</h4>
+                    <div class="difficulty-bar"><span>Fácil</span><div class="bar easy" style="width: 12%;"></div><span>3</span></div>
+                    <div class="difficulty-bar"><span>Intermedio</span><div class="bar medium" style="width: 10%;"></div><span>2</span></div>
+                    <div class="difficulty-bar"><span>Avanzado</span><div class="bar hard" style="width: 7%;"></div><span>6</span></div>
+                </div>
+                <a href="{{ url_for('profile', email='usuario.prueba@unidev.com') }}" class="btn-view-profile"><span class="material-icons">person</span> Ver Perfil</a>
+                
+            </div>
+            <!-- Se pueden agregar más estudiantes... -->
+        </div>
+    </section>
+    <!-- Dashboard de Estadísticas Generales -->
+    <section class="dashboard-section">
+        <h2>Estadísticas Generales</h2>
+        <div class="dashboard-cards">
+            <!-- Tarjeta de Promedio General -->
+            <div class="dashboard-card">
+                <h3><span class="material-icons">equalizer</span> Puntaje Promedio General</h3>
+                <p>4.2</p>
+            </div>
+            <!-- Tarjeta de Total de Proyectos Completados -->
+            <div class="dashboard-card">
+                <h3><span class="material-icons">assignment</span> Total Proyectos Completados</h3>
+                <p>142</p>
+            </div>
+            <!-- Tarjeta de Proyectos por Dificultad -->
+            <div class="dashboard-card">
+                <h3><span class="material-icons">bar_chart</span> Proyectos por Dificultad</h3>
+                <table class="difficulty-table">
+                    <thead>
+                        <tr>
+                            <th>Dificultad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fácil</td>
+                            <td>68</td>
+                        </tr>
+                        <tr>
+                            <td>Intermedio</td>
+                            <td>52</td>
+                        </tr>
+                        <tr>
+                            <td>Avanzado</td>
+                            <td>22</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

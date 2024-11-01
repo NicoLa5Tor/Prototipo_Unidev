@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - UniDev</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado con Logo y Cerrar Sesión -->
+    <header class="header">
+        <img src="{{ url_for('static', filename='images/UniDev_Logo.png') }}" alt="UniDev Logo" class="logo">
+        <h2>Perfil de usuario</h2>
+        <a href="/logout" class="logout-btn">
+            <span class="material-icons">logout</span> Cerrar sesión
+        </a>
+    </header>
+
+    <!-- Contenido del Perfil -->
+    <div class="container">
+        <!-- Contenedor de perfil y detalles adicionales -->
+        <div class="profile-section">
+            <div class="profile-container">
+                <!-- Imagen de Perfil -->
+                <div class="profile-picture">
+                    <img src="{{ url_for('static', filename='images/Profile_Placeholder.png') }}" alt="Foto de Perfil">
+                </div>
+
+                <h1>Juan Pérez</h1>
+                <p><strong>Correo Electrónico:</strong> juan.perez@example.com</p>
+                <p><strong>Tipo de Usuario:</strong> Estudiante</p>
+
+                <div class="section">
+                    <h2><span class="material-icons">work</span> Habilidades</h2>
+                    <ul class="profile-list">
+                        <li>Python</li>
+                        <li>Data Science</li>
+                        <li>Machine Learning</li>
+                        <li>Desarrollo Web</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2><span class="material-icons">school</span> Estudios</h2>
+                    <p>Ingeniería en Sistemas - Universidad Nacional</p>
+                </div>
+
+                <div class="section">
+                    <h2><span class="material-icons">folder</span> Proyectos Completados</h2>
+                    <ul class="profile-list">
+                        <li>Análisis de Datos para Finanzas</li>
+                        <li>Modelo Predictivo de Ventas</li>
+                    </ul>
+                </div>
+
+                <!-- Botón Editar Perfil -->
+                <a href="/edit_profile" class="edit-profile-btn">
+                    <span class="material-icons">edit</span> Editar Perfil
+                </a>
+            </div>
+
+            <!-- Sección adicional para Comentarios y Empresas en las que ha trabajado -->
+            <div class="additional-info">
+                <div class="section">
+                    <h2><span class="material-icons">comment</span> Comentarios</h2>
+                    <ul class="comments-list">
+                        <li>
+                            <p><strong>Ana Gómez:</strong> "Juan es un excelente profesional, su trabajo fue impecable" - Empresa XYZ</p>
+                        </li>
+                        <li>
+                            <p><strong>Carlos López:</strong> "Muy comprometido y responsable en todos los proyectos" - Empresa ABC</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2><span class="material-icons">business</span> Experiencia Profesional</h2>
+                    <ul class="company-list">
+                        <li>
+                            <p><strong>Empresa XYZ</strong> <br> <em>Analista de Datos</em> <br> Enero 2022 - Actualidad <br> Desarrolló modelos predictivos para optimización de recursos.</p>
+                        </li>
+                        <li>
+                            <p><strong>Empresa ABC</strong> <br> <em>Ingeniero de Software</em> <br> Julio 2020 - Diciembre 2021 <br> Participó en el desarrollo de aplicaciones web para gestión de inventarios.</p>
+                        </li>
+                        <li>
+                            <p><strong>Tech Innovators</strong> <br> <em>Practicante de Desarrollo Web</em> <br> Enero 2020 - Junio 2020 <br> Apoyó en la implementación de plataformas de comercio electrónico.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
